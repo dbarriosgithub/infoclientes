@@ -17,6 +17,8 @@ class CreateVisitsTable extends Migration
             $table->string('fecha');
             $table->integer('valorvisita');
             $table->string('observaciones');
+            $table->integer('cliente_id')->unsigned();
+            $table->foreign('cliente_id')->references('id')->on('clients');
             $table->integer('vendedor_id')->unsigned();
             $table->foreign('vendedor_id')->references('id')->on('sellers');
             $table->timestamps();

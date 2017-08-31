@@ -17,8 +17,8 @@ class CreateClientsTable extends Migration
             $table->integer('saldocupo');
             $table->integer('cupo');
             $table->integer('porcentajevisitas');
-            $table->integer('persona_id')->unsigned();
-            $table->foreign('persona_id')->references('id')->on('people');
+            $table->integer('person_id')->unsigned();
+            $table->foreign('person_id')->references('id')->on('people');
             $table->timestamps();
         });
     }

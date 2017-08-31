@@ -19,3 +19,27 @@ $factory->define(App\User::class, function ($faker) {
         'remember_token' => str_random(10),
     ];
 });
+  
+  $factory->define(App\Country::class,function($faker){
+      return[
+          'codpais'=>$faker->text(10),
+          'nompais'=>$faker->country
+      ];
+  });
+
+  $factory->define(App\Department::class,function($faker){
+
+      return[
+          'coddepartamento'=>$faker->text(10),
+          'nomdepartamento'=>$faker->state,
+          'pais_id'=>factory(App\Country::class)->create()->id,
+      ];
+  });
+
+  $factory->define(App\City::class,function($faker){
+     return[
+         'codciudad'=>$faker->text(10),
+         'nomciudad'=>$faker->city,
+         'departamento_id'=>factory(App\City::class)->create()->id,
+     ];
+  });

@@ -1,0 +1,1 @@
+{{!! Form::select('departamento',$selectModel,'Seleccione un departamento',["class"=>"form-control"]) !!}}
